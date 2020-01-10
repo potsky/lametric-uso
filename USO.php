@@ -87,7 +87,7 @@ $result = [
 
 if ($found_played_game) {
     $result["frames"][] = [
-        "text" => ' ' . $match_state_previous . ' ' . str_replace(' ', '', $match_score_previous) . ' ' . $match_team2_previous . ' on ' . $match_date_previous,
+        "text" => html_entity_decode($match_state_previous . ' ' . str_replace(' ', '', $match_score_previous) . ' ' . $match_team2_previous . ' on ' . $match_date_previous, ENT_QUOTES | ENT_XML, 'UTF-8'),
         "icon" => "a2573"
     ];
 }
@@ -106,7 +106,7 @@ if ($rank>0) {
 
 if (!empty($match_date_next)) {
     $result["frames"][] = [
-        "text" => $match_date_next . " " . $match_team1_next . " " . $match_team2_next,
+        "text" => html_entity_decode($match_date_next . " " . $match_team1_next . " " . $match_team2_next, ENT_QUOTES | ENT_XML1, 'UTF-8'),
         "icon" => "i14642"
     ];
 }
